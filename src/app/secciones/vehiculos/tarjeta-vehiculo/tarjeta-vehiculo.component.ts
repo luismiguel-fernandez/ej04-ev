@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tarjeta-vehiculo',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./tarjeta-vehiculo.component.css']
 })
 export class TarjetaVehiculoComponent {
-
+  @Input() vehiculo:any
 }

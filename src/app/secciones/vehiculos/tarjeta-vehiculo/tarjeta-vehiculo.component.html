@@ -1,1 +1,7 @@
-<p>tarjeta-vehiculo works!</p>
+<div class="card text-center bg-light mb-2 mr-2">
+	<img [src]="vehiculo.imagen" class="card-img-top">
+	<div class="card-body">
+		<h5 class="card-title">{{vehiculo.nombre}}</h5>
+		<p class="card-text">{{vehiculo.precio}} €</p>
+	</div>
+</div>
