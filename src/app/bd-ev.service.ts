@@ -46,9 +46,10 @@ export class BdEvService {
   private vehiculos:any
   private fabricantes:any
   private urlBase:string = "http://localhost/DWEC/ev/search.php"
+  private urlBaseExt:string = "https://my-json-server.typicode.com/luismiguel-fernandez/angular2022/"
 
   constructor(private http:HttpClient) {
-    this.http.get(this.urlBase + "?q=models").subscribe(
+    /*this.http.get(this.urlBase + "?q=models").subscribe(
       (response:any) => {
         this.vehiculos = response
       }
@@ -57,13 +58,27 @@ export class BdEvService {
       (response:any) => {
         this.fabricantes = response
       }
-    )
+    )*/
   }
 
   getVehiculos():Array<any> {
+    if (!this.vehiculos) {
+      this.http.get(this.urlBaseExt + "coches").subscribe(
+        (response:any) => {
+          this.vehiculos = response
+        }
+      )
+    }
     return this.vehiculos
   }
   getFabricantes():Array<any> {
+    if (!this.fabricantes) {
+      this.http.get(this.urlBaseExt + "fabricantes").subscribe(
+        (response:any) => {
+          this.fabricantes = response
+        }
+      )
+    }
     return this.fabricantes
   }
 }
