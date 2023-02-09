@@ -15,6 +15,7 @@ import { ListadoVehiculosComponent } from './secciones/vehiculos/listado-vehicul
 import { TarjetaVehiculoComponent } from './secciones/vehiculos/tarjeta-vehiculo/tarjeta-vehiculo.component';
 import { ListadoFabricantesComponent } from './secciones/fabricantes/listado-fabricantes/listado-fabricantes.component';
 import { TarjetaFabricanteComponent } from './secciones/fabricantes/tarjeta-fabricante/tarjeta-fabricante.component';
+import { FavoritosComponent } from './secciones/favoritos/favoritos.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TarjetaFabricanteComponent } from './secciones/fabricantes/tarjeta-fabr
     ListadoVehiculosComponent,
     TarjetaVehiculoComponent,
     ListadoFabricantesComponent,
-    TarjetaFabricanteComponent
+    TarjetaFabricanteComponent,
+    FavoritosComponent
   ],
   imports: [
     BrowserModule,

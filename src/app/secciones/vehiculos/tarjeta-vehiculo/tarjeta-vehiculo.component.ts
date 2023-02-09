@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { FavsService } from 'src/app/favs.service';
 
 @Component({
   selector: 'app-tarjeta-vehiculo',
@@ -7,4 +8,11 @@ import { Component, Input } from '@angular/core';
 })
 export class TarjetaVehiculoComponent {
   @Input() vehiculo:any
+
+  constructor(private favs:FavsService) {
+
+  }
+  addFav(id:string){
+    this.favs.addFav(id)
+  }
 }
