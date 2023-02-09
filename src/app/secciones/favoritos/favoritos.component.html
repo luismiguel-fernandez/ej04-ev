@@ -1,6 +1,5 @@
-<h3>Favoritos del usuario:</h3>
-<ul>
-  <li *ngFor="let f of getFavs()">
-    {{f}}
-  </li>
-</ul>
+<div id="listaV" class="row row-cols-4">
+  <app-tarjeta-vehiculo *ngFor="let id of getFavs()"
+                        [vehiculo]="getCocheById(id)">
+  </app-tarjeta-vehiculo>
+</div>

@@ -81,4 +81,8 @@ export class BdEvService {
     }
     return this.fabricantes
   }
+
+  getCocheById(id:string) {
+    return this.getVehiculos().find( (c:any) => c.id == id)
+  }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BdEvService } from 'src/app/bd-ev.service';
 import { FavsService } from 'src/app/favs.service';
 
 @Component({
@@ -7,11 +8,15 @@ import { FavsService } from 'src/app/favs.service';
   styleUrls: ['./favoritos.component.css']
 })
 export class FavoritosComponent {
-  constructor(private favs:FavsService) {
-
+  constructor(private favs:FavsService,
+              private bdCoches:BdEvService) {
   }
 
   getFavs() {
     return this.favs.getFavs()
+  }
+
+  getCocheById(id:string) {
+    return this.bdCoches.getCocheById(id)
   }
 }
