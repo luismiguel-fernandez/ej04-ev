@@ -18,9 +18,9 @@
     <tr><td>
       <div class="form-group">
         <label for="fabList">Elige un fabricante</label>
-        <select class="form-control" id="fabList">
+        <select #fab class="form-control" id="fabList" (change)="setFabFilter(fab.value)">
           <option value="0">(Elige un fabricante)</option>
-          <!-- RELLENAR CON UN LISTADO DE TODOS LOS FABRICANTES -->
+          <option *ngFor="let f of getFabricantes()" value="{{f.id}}">{{f.text}}</option>
         </select>
       </div>
       <div class="form-check">
