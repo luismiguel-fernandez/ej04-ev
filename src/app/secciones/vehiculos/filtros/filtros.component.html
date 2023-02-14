@@ -5,11 +5,26 @@
   <tbody>
     <tr><td>
       <div class="form-group">
-        <input type="text" class="form-control" id="modelo" placeholder="Nombre del modelo">
+        <input #modelo (keyup)="setNombreFilter(modelo.value)" type="text" class="form-control" id="modelo" placeholder="Nombre del modelo">
       </div>
     </td></tr>
   </tbody>
 </table>
+
+<table class="table table-striped">
+  <thead class="thead-light">
+    <tr><th>PRECIO</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>
+      <div class="form-group">
+        <input #min (keyup)="setPrecioMinFilter(min.value)" type="text" class="form-control" id="min" placeholder="Precio mínimo">
+        <input #max (keyup)="setPrecioMaxFilter(max.value)" type="text" class="form-control" id="max" placeholder="Precio máximo">
+      </div>
+    </td></tr>
+  </tbody>
+</table>
+
 <table id="fabFilters" class="table table-striped">
   <thead class="thead-light">
     <tr><th>FABRICANTE</th></tr>
@@ -42,9 +57,9 @@
     <tr><td>
       <div class="form-group">
         <label for="techList">Elige una tecnología</label>
-        <select class="form-control" id="techList">
+        <select #tec class="form-control" id="techList" (change)="setTecFilter(tec.value)">
           <option value="0">(Elige una tecnología)</option>
-          <!-- RELLENAR CON UN LISTADO DE TODOS LAS TECNOLOGÍAS -->
+          <option *ngFor="let t of getTecnologias()" value="{{t.id}}">{{t.text}}</option>
         </select>
       </div>
       <div class="form-check">

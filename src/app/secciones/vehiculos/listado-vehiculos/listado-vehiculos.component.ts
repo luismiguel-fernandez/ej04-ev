@@ -19,4 +19,20 @@ export class ListadoVehiculosComponent {
   getFabFilter() {
     return this.filtros.getFabFilter()
   }
+
+  getTecFilter() {
+    return this.filtros.getTecFilter()
+  }
+
+  getNombreFilter() {
+    return this.filtros.getNombreFilter()
+  }
+
+  getPrecioMinFilter() {
+    return this.filtros.getPrecioMinFilter()
+  }
+
+  getPrecioMaxFilter() {
+    return this.filtros.getPrecioMaxFilter()
+  }
 }

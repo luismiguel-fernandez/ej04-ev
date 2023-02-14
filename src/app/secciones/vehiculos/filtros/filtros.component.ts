@@ -10,12 +10,12 @@ import { ParamsFiltrosService } from 'src/app/params-filtros.service';
 export class FiltrosComponent {
   constructor(private bd:BdEvService,
               private filtros:ParamsFiltrosService) {
-
   }
-  getFabricantes() {
-    return this.bd.getFabricantes()
-  }
-  setFabFilter(newFab:string) {
-    this.filtros.setFabFilter(newFab)
-  }
+  getFabricantes() {return this.bd.getFabricantes()}
+  getTecnologias() {return this.bd.getTecnologias()}
+  setFabFilter(newFab:string) {this.filtros.setFabFilter(newFab)}
+  setTecFilter(newTec:string) {this.filtros.setTecFilter(newTec)}
+  setNombreFilter(newName:string) {this.filtros.setNombreFilter(newName)}
+  setPrecioMinFilter(newMin:string) {this.filtros.setPrecioMinFilter(newMin)}
+  setPrecioMaxFilter(newMax:string) {this.filtros.setPrecioMaxFilter(newMax)}
 }

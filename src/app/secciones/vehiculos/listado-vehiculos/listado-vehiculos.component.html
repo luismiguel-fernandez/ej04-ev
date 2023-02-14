@@ -4,7 +4,10 @@
 </div>
 
 <div id="listaV" class="row row-cols-4">
-  <app-tarjeta-vehiculo *ngFor="let v of getVehiculos() | porFabricante:getFabFilter()" [vehiculo]="v">
+  <app-tarjeta-vehiculo *ngFor="let v of getVehiculos() | porFabricante:getFabFilter()
+                                                        | porTecnologia:getTecFilter()
+                                                        | porNombre:getNombreFilter()
+                                                        | porPrecio:getPrecioMinFilter():getPrecioMaxFilter()" [vehiculo]="v">
 
   </app-tarjeta-vehiculo>
 </div>

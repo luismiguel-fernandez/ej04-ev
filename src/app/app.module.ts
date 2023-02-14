@@ -17,6 +17,9 @@ import { ListadoFabricantesComponent } from './secciones/fabricantes/listado-fab
 import { TarjetaFabricanteComponent } from './secciones/fabricantes/tarjeta-fabricante/tarjeta-fabricante.component';
 import { FavoritosComponent } from './secciones/favoritos/favoritos.component';
 import { PipeFabricantePipe } from './pipes/pipe-fabricante.pipe';
+import { PipeTecnologiaPipe } from './pipes/pipe-tecnologia.pipe';
+import { PipeNombrePipe } from './pipes/pipe-nombre.pipe';
+import { PipePrecioPipe } from './pipes/pipe-precio.pipe';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { PipeFabricantePipe } from './pipes/pipe-fabricante.pipe';
     ListadoFabricantesComponent,
     TarjetaFabricanteComponent,
     FavoritosComponent,
-    PipeFabricantePipe
+    PipeFabricantePipe,
+    PipeTecnologiaPipe,
+    PipeNombrePipe,
+    PipePrecioPipe
   ],
   imports: [
     BrowserModule,
