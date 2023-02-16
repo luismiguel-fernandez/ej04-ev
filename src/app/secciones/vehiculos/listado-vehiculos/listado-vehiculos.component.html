@@ -3,7 +3,12 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 
-<div id="listaV" class="row row-cols-4">
+<div class="form-check form-switch">
+  <input (change)="cambiarVista()" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+  <label class="form-check-label" for="flexSwitchCheckDefault">Cambiar vista</label>
+</div>
+
+<div *ngIf="estaEnModoTarjeta(); else modoLista" id="listaV" class="row row-cols-4">
   <app-tarjeta-vehiculo *ngFor="let v of getVehiculos() | porFabricante:getFabFilter()
                                                         | porTecnologia:getTecFilter()
                                                         | porNombre:getNombreFilter()
@@ -11,3 +16,14 @@
 
   </app-tarjeta-vehiculo>
 </div>
+
+<ng-template #modoLista>
+  <div class="list-group" >
+    <app-fila-vehiculo *ngFor="let v of getVehiculos() | porFabricante:getFabFilter()
+                                                        | porTecnologia:getTecFilter()
+                                                        | porNombre:getNombreFilter()
+                                                        | porPrecio:getPrecioMinFilter():getPrecioMaxFilter()" [vehiculo]="v">
+
+    </app-fila-vehiculo>
+  </div>
+</ng-template>

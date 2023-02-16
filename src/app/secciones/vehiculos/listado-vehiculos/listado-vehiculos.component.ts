@@ -8,31 +8,19 @@ import { ParamsFiltrosService } from 'src/app/params-filtros.service';
   styleUrls: ['./listado-vehiculos.component.css']
 })
 export class ListadoVehiculosComponent {
+  private modoTarjeta:boolean = true
+
   constructor(private bd:BdEvService,
               private filtros:ParamsFiltrosService){
   }
 
-  getVehiculos():Array<any> {
-    return this.bd.getVehiculos()
-  }
+  cambiarVista() {this.modoTarjeta = !this.modoTarjeta}
+  estaEnModoTarjeta():boolean {return this.modoTarjeta}
 
-  getFabFilter() {
-    return this.filtros.getFabFilter()
-  }
-
-  getTecFilter() {
-    return this.filtros.getTecFilter()
-  }
-
-  getNombreFilter() {
-    return this.filtros.getNombreFilter()
-  }
-
-  getPrecioMinFilter() {
-    return this.filtros.getPrecioMinFilter()
-  }
-
-  getPrecioMaxFilter() {
-    return this.filtros.getPrecioMaxFilter()
-  }
+  getVehiculos():Array<any> {return this.bd.getVehiculos()}
+  getFabFilter() {return this.filtros.getFabFilter()}
+  getTecFilter() {return this.filtros.getTecFilter()}
+  getNombreFilter() {return this.filtros.getNombreFilter()}
+  getPrecioMinFilter() {return this.filtros.getPrecioMinFilter()}
+  getPrecioMaxFilter() {return this.filtros.getPrecioMaxFilter()}
 }

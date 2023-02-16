@@ -20,6 +20,7 @@ import { PipeFabricantePipe } from './pipes/pipe-fabricante.pipe';
 import { PipeTecnologiaPipe } from './pipes/pipe-tecnologia.pipe';
 import { PipeNombrePipe } from './pipes/pipe-nombre.pipe';
 import { PipePrecioPipe } from './pipes/pipe-precio.pipe';
+import { FilaVehiculoComponent } from './secciones/vehiculos/fila-vehiculo/fila-vehiculo.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { PipePrecioPipe } from './pipes/pipe-precio.pipe';
     PipeFabricantePipe,
     PipeTecnologiaPipe,
     PipeNombrePipe,
-    PipePrecioPipe
+    PipePrecioPipe,
+    FilaVehiculoComponent
   ],
   imports: [
     BrowserModule,
